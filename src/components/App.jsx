@@ -37,7 +37,7 @@ function App() {
       location: 'Springfield, US',
       description: 'Design and develop innovative software solutions, collaborate with cross-functional teams, implement cutting-edge technologies, enhance user experiences, and solve complex challenges as a software engineer.',
       startDate: '2023-09-01',
-      endDate: 'present',
+      endDate: '',
       id: uuidv4(),
     },
   ])
@@ -97,6 +97,33 @@ function App() {
     setExperiences(updatedExperiences);
   }
 
+  function addEducation(){
+    const newEducation = {
+      degree: 'New Degree',
+      school: 'New School',
+      location: 'New City',
+      startDate: '',
+      endDate: '',
+      id: uuidv4(),
+    }
+
+    setEducations([...educations, newEducation]);
+  }
+
+  function addExperience(){
+    const newExperience = {
+      company: 'New Company',
+      position: 'New Position',
+      location: 'New City',
+      description: 'New Description',
+      startDate: '',
+      endDate: '',
+      id: uuidv4(),
+    }
+
+    setExperiences([...experiences, newExperience]);
+  }
+
   return (
     <>
     <div className='boxes-container'>
@@ -105,10 +132,12 @@ function App() {
         onChange = {handleDetailsInput} />
         <EducationsBox
           educations = {educations}
-          onChange = {handleEducationsInput}/>
+          onChange = {handleEducationsInput}
+          onClick = {addEducation}/>
         <ExperiencesBox
           experiences={experiences}
-          onChange = {handleExperiencesInput}/>
+          onChange = {handleExperiencesInput}
+          onClick = {addExperience}/>
     </div>
     <LivePreview 
       personalData = {personalData}

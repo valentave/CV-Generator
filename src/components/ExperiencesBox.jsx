@@ -1,6 +1,6 @@
 import EducationItem from './ExperienceItem.jsx'
 
-function ExperiencesBox({experiences, onChange}) {
+function ExperiencesBox({experiences, onChange, onClick}) {
     return (
         <details className='inputs-box experiences'>
             <summary className='box-title'>Experiences</summary>
@@ -10,6 +10,9 @@ function ExperiencesBox({experiences, onChange}) {
                     experience = {experiences}
                     onChange = {onChange} />
             ))}
+            <button
+            className='plus-button'
+            onClick={onClick}>+ Experience</button>
         </details>
     )
 }
