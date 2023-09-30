@@ -58,45 +58,43 @@ function App() {
   }
 
   function handleEducationsInput(e) {
-    console.log(e.target.value);
-    const newEducations = [...educations];
-    for (const edu in newEducations) {
+    const updatedEducations = educations.map(edu => {
       if (e.target.className === 'school-input' && e.target.id === edu.school + '-' + edu.id) {
-        edu.school = e.target.value;
+        return { ...edu, school: e.target.value };
       } else if (e.target.className === 'degree-input' && e.target.id === edu.degree + '-' + edu.id) {
-        edu.degree = e.target.value;
+        return { ...edu, degree: e.target.value };
       } else if (e.target.className === 'location-input' && e.target.id === edu.location + '-' + edu.id) {
-        edu.location = e.target.value;
+        return { ...edu, location: e.target.value };
       } else if (e.target.className === 'sdate-input' && e.target.id === edu.startDate + '-' + edu.id) {
-        edu.startDate = e.target.value;
+        return { ...edu, startDate: e.target.value };
       } else if (e.target.className === 'edate-input' && e.target.id === edu.endDate + '-' + edu.id) {
-        edu.endDate = e.target.value;
+        return { ...edu, endDate: e.target.value };
       }
-    }
-
-    setEducations([...newEducations]);
+      return edu;
+    });
+  
+    setEducations(updatedEducations);
   }
 
   function handleExperiencesInput(e) {
-    console.log(e.target.value);
-    const newExperiences = [...experiences];
-    for (const exp in newExperiences) {
+    const updatedExperiences = experiences.map(exp => {
       if (e.target.className === 'company-input' && e.target.id === exp.company + '-' + exp.id) {
-        exp.company = e.target.value;
+        return { ...exp, company: e.target.value };
       } else if (e.target.className === 'position-input' && e.target.id === exp.position + '-' + exp.id) {
-        exp.position = e.target.value;
+        return { ...exp, position: e.target.value };
       } else if (e.target.className === 'location-input' && e.target.id === exp.location + '-' + exp.id) {
-        exp.location = e.target.value;
+        return { ...exp, location: e.target.value };
       } else if (e.target.className === 'description-input' && e.target.id === exp.description + '-' + exp.id) {
-        exp.description = e.target.value;
+        return { ...exp, description: e.target.value };
       } else if (e.target.className === 'sdate-input' && e.target.id === exp.startDate + '-' + exp.id) {
-        exp.startDate = e.target.value;
+        return { ...exp, startDate: e.target.value };
       } else if (e.target.className === 'edate-input' && e.target.id === exp.endDate + '-' + exp.id) {
-        exp.endDate = e.target.value;
+        return { ...exp, endDate: e.target.value };
       }
-    }
-
-    setExperiences([...newExperiences]);
+      return exp;
+    });
+  
+    setExperiences(updatedExperiences);
   }
 
   return (
