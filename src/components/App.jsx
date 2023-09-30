@@ -19,7 +19,6 @@ function App() {
       location: 'Casilda, AR',
       startDate: '2012-01-01',
       endDate: '2016-12-31',
-      isHidden: false,
       id: uuidv4(),
     },
     {
@@ -27,8 +26,7 @@ function App() {
       school: 'Springfield University',
       location: 'Springfield, US',
       startDate: '2018-01-01',
-      endDate: '2023-01-01',
-      isHidden: false,
+      endDate: '',
       id: uuidv4(),
     },
   ])
@@ -40,7 +38,6 @@ function App() {
       description: 'Design and develop innovative software solutions, collaborate with cross-functional teams, implement cutting-edge technologies, enhance user experiences, and solve complex challenges as a software engineer.',
       startDate: '2023-09-01',
       endDate: 'present',
-      isHidden: false,
       id: uuidv4(),
     },
   ])
