@@ -124,6 +124,18 @@ function App() {
     setExperiences([...experiences, newExperience]);
   }
 
+  function deleteEducation(e){
+    let target_id = e.target.parentNode.id;
+    let newEducations = educations.filter((edu) => edu.id + "school" != target_id);
+    setEducations([...newEducations]);
+  }
+
+  function deleteExperience(e){
+    let target_id = e.target.parentNode.id;
+    let newExperiences = experiences.filter((exp) => exp.id + "job" != target_id);
+    setExperiences([...newExperiences]);
+  }
+
   return (
     <>
     <div className='boxes-container'>
@@ -133,11 +145,13 @@ function App() {
         <EducationsBox
           educations = {educations}
           onChange = {handleEducationsInput}
-          onClick = {addEducation}/>
+          onClickAdd = {addEducation}
+          onClickDelete = {deleteEducation}/>
         <ExperiencesBox
           experiences={experiences}
           onChange = {handleExperiencesInput}
-          onClick = {addExperience}/>
+          onClickAdd = {addExperience}
+          onClickDelete ={deleteExperience}/>
     </div>
     <LivePreview 
       personalData = {personalData}

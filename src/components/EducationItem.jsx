@@ -1,8 +1,8 @@
 import Input from './Input.jsx'
 
-function EducationItem({experience, onChange}) {
+function EducationItem({experience, onChange, onClickDelete}) {
     return (
-        <details className='inputs-box education-item'>
+        <details className='inputs-box education-item' id={experience.id + "school"}>
             <summary>{experience.school}</summary>
             <Input 
                 label = 'School Name'
@@ -43,6 +43,8 @@ function EducationItem({experience, onChange}) {
                 id = {experience.endDate + '-' + experience.id}
                 className = 'edate-input'
                 onChange = {onChange} />
+
+            <button className='delete-button' onClick={onClickDelete}>Delete</button>
         </details>
     )
 }
