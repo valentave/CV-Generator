@@ -44,7 +44,9 @@ function EducationItem({experience, onChange, onClickDelete}) {
                 className = 'edate-input'
                 onChange = {onChange} />
 
-            <button className='delete-button' onClick={onClickDelete}>Delete</button>
+            <div className='button-container'>
+                <button className='delete-button' onClick={onClickDelete}>Delete</button>
+            </div>
         </details>
     )
 }

@@ -2,7 +2,7 @@ import Input from './Input.jsx'
 
 function PersonalDetailsBox({ personalData, onChange }) {
     return (
-        <details className='inputs-box personal-details' key={personalData.id}>
+        <details className='inputs-box personal-details' key={personalData.id} open>
             <summary className='box-title'>Personal Details</summary>
             <Input 
                 label = 'Full Name'
@@ -11,19 +11,19 @@ function PersonalDetailsBox({ personalData, onChange }) {
                 id = 'fullName'
                 onChange={onChange} />
             <Input 
-                label = 'email'
+                label = 'Email'
                 type = 'email'
                 value = {personalData.email}
                 id= 'email'
                 onChange= {onChange} />
             <Input 
-                label = 'phone'
+                label = 'Phone'
                 type = 'tel'
                 value = {personalData.phone}
                 id= 'phone'
                 onChange= {onChange} />
             <Input 
-                label = 'address'
+                label = 'Address'
                 type = 'text'
                 value = {personalData.address}
                 id= 'address'

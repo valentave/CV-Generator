@@ -11,9 +11,11 @@ function EducationsBox({educations, onChange, onClickAdd, onClickDelete}) {
                     onChange = {onChange} 
                     onClickDelete = {onClickDelete}/>
             ))}
-            <button 
-            className='plus-button'
-            onClick = {onClickAdd}>+ Education</button>
+            <div className='button-container'>
+                <button 
+                className='plus-button'
+                onClick = {onClickAdd}>+ Education</button>
+            </div>
         </details>
     )
 }

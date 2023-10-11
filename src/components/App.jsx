@@ -22,7 +22,7 @@ function App() {
       id: uuidv4(),
     },
     {
-      degree: 'Computer Scientist',
+      degree: 'Computer Science',
       school: 'Springfield University',
       location: 'Springfield, US',
       startDate: '2018-01-01',

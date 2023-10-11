@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --light-gray: #efefef;
+    --dark-blue: rgb(24, 24, 83);
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    padding: 10px;
+    justify-items: center;
+}
+
+.boxes-container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 90%;
+    padding: 10px;
+    gap: 15px;
+    transition: all 1s ease-in-out;
+}
+
+.inputs-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.box-title {
+    font-size: 1.25rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10px;
+}
+
+input {
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: var(--light-gray);
+}
+
+label {
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.plus-button {
+    border: none;
+    background: rgb(0, 162, 255);
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.delete-button {
+    border: none;
+    background-color: rgb(238, 75, 75);
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+.live-preview {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.live-personal-data {
+    color: white;
+    background-color: var(--dark-blue);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.live-personal-data > p,
+.live-personal-data > h1 {
+    max-width: 80%;
+}
+
+.live-fullname {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.live-educations,
+.live-experiences {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    align-self: center;
+}
+
+.live-separator {
+    background-color: var(--light-gray);
+    width: 100%;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+}
+
+.education-item,
+.experience-item {
+    display: flex;
+    width: 100%;
+}
+
+.first-column {
+    min-width: 40%;
+}
+
+.second-column {
+    min-width: 60%;
+}
+
+.live-bold {
+    font-weight: bold;
+}

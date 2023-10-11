@@ -11,9 +11,11 @@ function ExperiencesBox({experiences, onChange, onClickAdd, onClickDelete}) {
                     onChange = {onChange} 
                     onClickDelete = {onClickDelete}/>
             ))}
-            <button
-            className='plus-button'
-            onClick={onClickAdd}>+ Experience</button>
+            <div className='button-container'>
+                <button
+                className='plus-button'
+                onClick={onClickAdd}>+ Experience</button>
+            </div>
         </details>
     )
 }
