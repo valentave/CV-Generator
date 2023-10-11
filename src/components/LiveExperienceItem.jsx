@@ -1,6 +1,6 @@
 function LiveExperienceItem({item}) {
     return (
-        <div className="experience-item">
+        <div className="live-experience-item">
             <div className="first-column">
                 <p>{item.startDate ? item.startDate : "Present"} - {item.endDate ? item.endDate : "Present"}</p>
                 <p>{item.location}</p>

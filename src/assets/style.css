@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: 2fr 3fr;
     background-color: var(--light-gray);
-    min-height: 100vh;
+    min-height: calc(100vh - 20px);
     padding: 10px;
     justify-items: center;
 }
@@ -51,6 +51,7 @@ input {
     padding: 5px 5px;
     border-radius: 5px;
     border: 0px;
+    max-width: 100%;
     background-color: var(--light-gray);
 }
 
@@ -83,6 +84,7 @@ label {
 }
 
 .live-preview {
+    max-width: 720px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -129,10 +131,11 @@ label {
     color: var(--dark-blue);
 }
 
-.education-item,
-.experience-item {
+.live-education-item,
+.live-experience-item {
     display: flex;
     width: 100%;
+    column-gap: 10px;
 }
 
 .first-column {

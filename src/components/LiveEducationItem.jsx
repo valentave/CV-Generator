@@ -1,6 +1,6 @@
 function LiveEducationItem({item}) {
     return (
-        <div className="education-item">
+        <div className="live-education-item">
             <div className="first-column">
                 <p>{item.startDate ? item.startDate : "Present"} - {item.endDate ? item.endDate : "Present"}</p>
                 <p>{item.location}</p>
