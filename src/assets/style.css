@@ -4,12 +4,15 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --light-gray: #efefef;
     --dark-blue: rgb(24, 24, 83);
+    --header-text-color: #fff;
+    --decoration-color: rgb(24, 24, 83);
+    --separator-color: #efefef;
 }
 
 #root {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    background-color: var(--light-gray);
+    background-color: var(--separator-color);
     min-height: calc(100vh - 20px);
     padding: 10px;
     justify-items: center;
@@ -52,7 +55,7 @@ input {
     border-radius: 5px;
     border: 0px;
     max-width: 100%;
-    background-color: var(--light-gray);
+    background-color: var(--separator-color);
 }
 
 label {
@@ -93,7 +96,7 @@ label {
 
 .live-personal-data {
     color: white;
-    background-color: var(--dark-blue);
+    background-color: var(--decoration-color);
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -123,7 +126,7 @@ label {
 }
 
 .live-separator {
-    background-color: var(--light-gray);
+    background-color: var(--separator-color);
     width: 100%;
     text-align: center;
     line-height: 2rem;
@@ -148,4 +151,14 @@ label {
 
 .live-bold {
     font-weight: bold;
+}
+
+.svg {
+    height: 21px;
+    fill: var(--header-text-color);
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
 }
