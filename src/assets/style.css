@@ -1,12 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --light-gray: #efefef;
-    --dark-blue: rgb(24, 24, 83);
-    --header-text-color: #fff;
-    --decoration-color: rgb(24, 24, 83);
-    --separator-color: #efefef;
 }
 
 #root {
@@ -16,6 +10,11 @@
     min-height: calc(100vh - 20px);
     padding: 10px;
     justify-items: center;
+    font-family: sans-serif, serif, monospace;
+    --light-gray: #efefef;
+    --text-color: #fff;
+    --layout-color: #192657;
+    --separator-color: #efefef;
 }
 
 .boxes-container {
@@ -66,6 +65,8 @@ label {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    gap: 10%;
+    flex-wrap: wrap;
 }
 
 .plus-button {
@@ -89,9 +90,6 @@ label {
 .live-preview {
     max-width: 720px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .live-personal-data {
@@ -103,6 +101,7 @@ label {
     justify-content: center;
     text-align: center;
     gap: 5px;
+    align-content: flex-start;
 }
 
 .live-personal-data > p,
@@ -131,7 +130,7 @@ label {
     text-align: center;
     line-height: 2rem;
     font-size: 1.5rem;
-    color: var(--dark-blue);
+    color: var(--decoration-color);
 }
 
 .live-education-item,
@@ -161,4 +160,123 @@ label {
 .header-item {
     display: flex;
     align-items: center;
+    gap: 5px;
+}
+
+.education-item,
+.experience-item {
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.layout-button {
+    background-color: white;
+    border: none;
+}
+
+.button-box,
+.button-box-vertical {
+    height: 64px;
+    width: 64px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+}
+
+.button-box-vertical {
+    flex-direction: column;
+}
+
+.button-box-color-top,
+.button-box-white-down {
+    height: 50%;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.button-box-color,
+.button-box-white {
+    width: 50%;
+    height: 100%;
+}
+
+.layout-button-left {
+    border-radius: 8px 0 0 8px;
+}
+
+.layout-button-right {
+    border-radius: 0 8px 8px 0;
+}
+
+.color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    height: 80px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+}
+
+.color-input::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.color-input::-moz-color-swatch {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.font-button {
+    border: 1px solid black;
+    height: 64px;
+    width: 64px;
+    border-radius: 10px;
+}
+
+.font-preview {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.serif {
+    font-family: serif;
+}
+
+.sans {
+    font-family: sans-serif;
+}
+
+.mono {
+    font-family: monospace;
+}
+
+button {
+    cursor: pointer;
+}
+
+.live-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.live-left {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: stretch;
+}
+
+.history-container {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 20px
+}
+
+.pressed {
+    background: var(--layout-color);
+    color: var(--text-color);
 }

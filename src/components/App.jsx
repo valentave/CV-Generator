@@ -4,8 +4,13 @@ import LivePreview from './LivePreview.jsx'
 import PersonalDetailsBox from './PersonalDetailsBox.jsx'
 import EducationsBox from './EducationsBox.jsx';
 import ExperiencesBox from './ExperiencesBox.jsx';
+import StyleBox from './StyleBox.jsx';
 
 function App() {
+  const [layoutColor, setLayoutColor] = useState("#192657");
+  const [textColor, setTextColor] = useState("#ffffff");
+  const [layoutPosition, setLayoutPosition] = useState("top");
+  const [liveFont, setLiveFont] = useState("sans-serif")
   const [personalData, setPersonalData] = useState({
     fullName: 'Example Name',
     email: 'example-email@email.com',
@@ -125,15 +130,72 @@ function App() {
   }
 
   function deleteEducation(e){
-    let target_id = e.target.parentNode.id;
+    let target_id = e.target.parentNode.parentNode.id;
     let newEducations = educations.filter((edu) => edu.id + "school" != target_id);
     setEducations([...newEducations]);
   }
 
   function deleteExperience(e){
-    let target_id = e.target.parentNode.id;
+    let target_id = e.target.parentNode.parentNode.id;
     let newExperiences = experiences.filter((exp) => exp.id + "job" != target_id);
     setExperiences([...newExperiences]);
+  }
+
+  function changeColor(e){
+    let targetColor = e.target.value;
+    setLayoutColor(targetColor);
+
+    if (esColorClaro(targetColor)) {
+      setTextColor("#000000");
+    } else {
+      setTextColor("#ffffff");
+    }
+    
+    let root = document.querySelector("#root");
+    root.style.setProperty('--layout-color',  targetColor);
+    root.style.setProperty('--text-color', textColor);
+  }
+
+  function esColorClaro(hexColor) {
+    const r = parseInt(hexColor.slice(1, 3), 16);
+    const g = parseInt(hexColor.slice(3, 5), 16);
+    const b = parseInt(hexColor.slice(5, 7), 16);
+  
+    const brillo = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  
+    const umbral = 0.65;
+  
+    return brillo > umbral;
+  }
+
+  function changeLayout(e) {
+    let layoutId = e.target.parentNode.parentNode.id;
+    if(layoutId === "layout-top") {
+      setLayoutPosition("top");
+    } else if(layoutId === "layout-left") {
+      setLayoutPosition("left");
+    }
+  }
+
+  function changeFont(e) {
+    let buttonId = e.target.parentNode.id;
+    if (!buttonId) buttonId = e.target.id;
+    if (buttonId === "buttonSerif") setLiveFont("serif");
+    else if (buttonId === "buttonSans") setLiveFont("sans-serif");
+    else if (buttonId === "buttonMono") setLiveFont("monospace");
+
+    let buttons = document.querySelectorAll(".font-button");
+
+    for (let i = 0; i < buttons.length; i++) {
+
+      if (buttons[i].classList.contains("pressed")) {
+          buttons[i].classList.remove("pressed");
+      }
+
+      if (buttons[i].id === buttonId) {
+        buttons[i].classList.add("pressed");
+      }
+    }
   }
 
   return (
@@ -148,12 +210,22 @@ function App() {
           onClickAdd = {addEducation}
           onClickDelete = {deleteEducation}/>
         <ExperiencesBox
+          layoutColor={layoutColor}
           experiences={experiences}
           onChange = {handleExperiencesInput}
           onClickAdd = {addExperience}
           onClickDelete ={deleteExperience}/>
+        <StyleBox 
+          onChangeFont = {changeFont}
+          color = {layoutColor}
+          onChangeColor = {changeColor}
+          onClickLayout={changeLayout}/>
     </div>
     <LivePreview 
+      font = {liveFont}
+      layoutPosition = {layoutPosition}
+      textColor = {textColor}
+      layoutColor = {layoutColor}
       personalData = {personalData}
       educations = {educations}
       experiences = {experiences}/>
